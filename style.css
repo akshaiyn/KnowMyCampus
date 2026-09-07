@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: white;
+}
+
+nav h2 {
+    font-size: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: #222;
+}
+
+/* Hero Section */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #eaf2ff;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#searchBox {
+    width: 400px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 15px 25px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Features */
+
+.features {
+    padding: 60px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #222;
+    color: white;
+}
+/* ================= FACILITIES HEADER ================= */
+
+.facility-header {
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background: #eaf2ff;
+
+}
+
+.facility-header h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+.facility-header p {
+
+    font-size: 18px;
+
+    color: #555;
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+
+/* ================= FACILITY CARDS ================= */
+
+.card {
+
+    transition: 0.3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+.card h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+}
+
+.card button {
+
+    cursor: pointer;
+
+}

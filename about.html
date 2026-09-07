@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About | KnowMyCampus</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* ==========================================
+           ABOUT PAGE
+        ========================================== */
+
+        .about-hero {
+
+            text-align: center;
+
+            padding: 65px 20px;
+
+            background: #eaf2ff;
+
+        }
+
+
+        .about-hero span {
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            color: #1d4ed8;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .about-hero h1 {
+
+            font-size: 42px;
+
+            margin: 15px 0;
+
+        }
+
+
+        .about-hero p {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            font-size: 18px;
+
+            color: #555;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ==========================================
+           COMMON SECTION
+        ========================================== */
+
+        .about-section {
+
+            padding: 60px 7%;
+
+        }
+
+
+        .about-section h2 {
+
+            text-align: center;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-description {
+
+            max-width: 850px;
+
+            margin: 0 auto 35px;
+
+            text-align: center;
+
+            color: #555;
+
+            line-height: 1.7;
+
+            font-size: 17px;
+
+        }
+
+
+        /* ==========================================
+           ABOUT CARD
+        ========================================== */
+
+        .about-card {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            line-height: 1.8;
+
+            color: #444;
+
+        }
+
+
+        /* ==========================================
+           PROBLEM + SOLUTION
+        ========================================== */
+
+        .two-column {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .info-card {
+
+            padding: 30px;
+
+            background: #f7f9fc;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+
+        }
+
+
+        .info-card .icon {
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .info-card h3 {
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .info-card p {
+
+            color: #555;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ==========================================
+           FEATURES
+        ========================================== */
+
+        .features-grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 22px;
+
+        }
+
+
+        .feature-card {
+
+            text-align: center;
+
+            padding: 28px 20px;
+
+            background: white;
+
+            border-radius: 14px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+
+        }
+
+
+        .feature-card:hover {
+
+            transform: translateY(-6px);
+
+        }
+
+
+        .feature-card .feature-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .feature-card h3 {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .feature-card p {
+
+            color: #666;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ==========================================
+           OBJECTIVES
+        ========================================== */
+
+        .objectives {
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .objective {
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: flex-start;
+
+            padding: 16px 0;
+
+            border-bottom: 1px solid #ddd;
+
+        }
+
+
+        .objective-number {
+
+            min-width: 35px;
+
+            height: 35px;
+
+            border-radius: 50%;
+
+            background: #1d4ed8;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+        }
+
+
+        .objective p {
+
+            margin: 5px 0;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ==========================================
+           TECHNOLOGY
+        ========================================== */
+
+        .technology-box {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            text-align: center;
+
+        }
+
+
+        .technology-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .technology {
+
+            padding: 12px 22px;
+
+            background: #eaf2ff;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            color: #1d4ed8;
+
+        }
+
+
+        /* ==========================================
+           WORKING
+        ========================================== */
+
+        .workflow {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .workflow-step {
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            background: #f7f9fc;
+
+            border-radius: 12px;
+
+        }
+
+
+        .step-number {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            color: #1d4ed8;
+
+        }
+
+
+        .workflow-step h3 {
+
+            margin: 10px 0;
+
+        }
+
+
+        .workflow-step p {
+
+            color: #666;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* ==========================================
+           TEAM
+        ========================================== */
+
+        .team-grid {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .team-card {
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+        }
+
+
+        .team-icon {
+
+            width: 70px;
+
+            height: 70px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            background: #eaf2ff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 32px;
+
+        }
+
+
+        .team-card h3 {
+
+            margin: 15px 0 5px;
+
+        }
+
+
+        .team-card p {
+
+            color: #666;
+
+        }
+
+
+        /* ==========================================
+           FUTURE
+        ========================================== */
+
+        .future-list {
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .future-list div {
+
+            padding: 15px;
+
+            margin: 10px 0;
+
+            background: #f7f9fc;
+
+            border-left: 5px solid #1d4ed8;
+
+            border-radius: 5px;
+
+        }
+
+
+        /* ==========================================
+           PROJECT INFO
+        ========================================== */
+
+        .project-info {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background: #1f2937;
+
+            color: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+        }
+
+
+        .project-info table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+        }
+
+
+        .project-info td {
+
+            padding: 13px;
+
+            border-bottom: 1px solid #555;
+
+        }
+
+
+        .project-info td:first-child {
+
+            font-weight: bold;
+
+            width: 35%;
+
+        }
+
+
+        /* ==========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media (max-width: 768px) {
+
+            .about-hero h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .two-column {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .workflow {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .team-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .workflow {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav>
+
+    <h2>KnowMyCampus</h2>
+
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="departments.html">
+            Departments
+        </a>
+
+        <a href="facilities.html">
+            Facilities
+        </a>
+
+        <a href="campus-map.html">
+            Campus Map
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="about-hero">
+
+    <span>
+        MINI PROJECT
+    </span>
+
+
+    <h1>
+        About KnowMyCampus
+    </h1>
+
+
+    <p>
+
+        An interactive campus discovery platform
+        designed to help students, faculty and
+        visitors easily explore campus information
+        in one place.
+
+    </p>
+
+</section>
+
+
+
+<!-- ==========================================
+     ABOUT THE PROJECT
+========================================== -->
+
+<section class="about-section">
+
+    <h2>
+        📖 About the Project
+    </h2>
+
+
+    <p class="section-description">
+
+        KnowMyCampus is a web-based interactive
+        campus discovery platform developed as a
+        mini project. The system brings important
+        campus information such as departments,
+        facilities and locations together in a
+        single platform.
+
+    </p>
+
+
+    <div class="about-card">
+
+        <p>
+
+            Navigating a large educational campus can
+            be difficult for new students, visitors and
+            other users. Information about departments,
+            laboratories, facilities and important
+            locations may be distributed across
+            different sources.
+
+        </p>
+
+
+        <p>
+
+            KnowMyCampus aims to provide a simple,
+            user-friendly and interactive solution.
+            Users can search for campus information,
+            explore academic departments, view facilities,
+            access the campus map and interact with an
+            AI-based assistant.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     PROBLEM & SOLUTION
+========================================== -->
+
+<section class="about-section"
+         style="background:#f7f9fc;">
+
+    <h2>
+        Problem & Solution
+    </h2>
+
+
+    <div class="two-column">
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                ❓
+            </div>
+
+
+            <h3>
+                Problem Statement
+            </h3>
+
+
+            <p>
+
+                Students and visitors may face difficulty
+                finding departments, facilities,
+                laboratories and important locations
+                within a large campus. Information may
+                not be available through a single,
+                easy-to-use platform.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                💡
+            </div>
+
+
+            <h3>
+                Proposed Solution
+            </h3>
+
+
+            <p>
+
+                KnowMyCampus provides a centralized
+                interactive website where users can
+                search campus information, explore
+                departments and facilities, locate
+                important places and obtain assistance
+                through an AI-based interface.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     KEY FEATURES
+========================================== -->
+
+<section class="about-section">
+
+    <h2>
+        🚀 Key Features
+    </h2>
+
+
+    <p class="section-description">
+
+        The platform provides multiple modules
+        to make campus exploration easier.
+
+    </p>
+
+
+    <div class="features-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔍
+            </div>
+
+            <h3>
+                Smart Search
+            </h3>
+
+            <p>
+                Search for departments,
+                facilities and campus locations.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🏫
+            </div>
+
+            <h3>
+                Departments
+            </h3>
+
+            <p>
+                Explore academic departments
+                and their information.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🏢
+            </div>
+
+            <h3>
+                Facilities
+            </h3>
+
+            <p>
+                Find libraries, laboratories,
+                hostels, canteen and more.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🗺️
+            </div>
+
+            <h3>
+                Campus Map
+            </h3>
+
+            <p>
+                Locate important buildings
+                and facilities on campus.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🤖
+            </div>
+
+            <h3>
+                AI Assistant
+            </h3>
+
+            <p>
+                Ask questions and receive
+                campus-related information.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📱
+            </div>
+
+            <h3>
+                User Friendly
+            </h3>
+
+            <p>
+                Simple and responsive interface
+                for different devices.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     OBJECTIVES
+========================================== -->
+
+<section class="about-section"
+         style="background:#f7f9fc;">
+
+    <h2>
+        🎯 Project Objectives
+    </h2>
+
+
+    <p class="section-description">
+
+        The main objectives of KnowMyCampus are:
+
+    </p>
+
+
+    <div class="objectives">
+
+
+        <div class="objective">
+
+            <div class="objective-number">
+                1
+            </div>
+
+            <p>
+                To provide centralized campus information
+                through a single web platform.
+            </p>
+
+        </div>
+
+
+
+        <div class="objective">
+
+            <div class="objective-number">
+                2
+            </div>
+
+            <p>
+                To help students and visitors easily
+                find departments and facilities.
+            </p>
+
+        </div>
+
+
+
+        <div class="objective">
+
+            <div class="objective-number">
+                3
+            </div>
+
+            <p>
+                To provide an interactive campus map
+                for locating important places.
+            </p>
+
+        </div>
+
+
+
+        <div class="objective">
+
+            <div class="objective-number">
+                4
+            </div>
+
+            <p>
+                To integrate an AI assistant for
+                answering campus-related questions.
+            </p>
+
+        </div>
+
+
+
+        <div class="objective">
+
+            <div class="objective-number">
+                5
+            </div>
+
+            <p>
+                To develop a simple, accessible and
+                user-friendly campus navigation system.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     HOW IT WORKS
+========================================== -->
+
+<section class="about-section">
+
+    <h2>
+        ⚙️ How KnowMyCampus Works
+    </h2>
+
+
+    <p class="section-description">
+
+        The basic workflow of the proposed system
+        is simple and user-friendly.
+
+    </p>
+
+
+    <div class="workflow">
+
+
+        <div class="workflow-step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Search
+            </h3>
+
+            <p>
+                User searches for a department,
+                facility or location.
+            </p>
+
+        </div>
+
+
+
+        <div class="workflow-step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <p>
+                The system displays relevant
+                campus information.
+            </p>
+
+        </div>
+
+
+
+        <div class="workflow-step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Locate
+            </h3>
+
+            <p>
+                User can use the campus map
+                to find the location.
+            </p>
+
+        </div>
+
+
+
+        <div class="workflow-step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <h3>
+                Assist
+            </h3>
+
+            <p>
+                AI Assistant provides
+                campus-related responses.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     TECHNOLOGY STACK
+========================================== -->
+
+<section class="about-section"
+         style="background:#f7f9fc;">
+
+    <h2>
+        💻 Technology Stack
+    </h2>
+
+
+    <p class="section-description">
+
+        The following technologies can be used
+        to develop the KnowMyCampus platform.
+
+    </p>
+
+
+    <div class="technology-box">
+
+
+        <div class="technology-list">
+
+            <span class="technology">
+                HTML5
+            </span>
+
+            <span class="technology">
+                CSS3
+            </span>
+
+            <span class="technology">
+                JavaScript
+            </span>
+
+            <span class="technology">
+                Python
+            </span>
+
+            <span class="technology">
+                Flask
+            </span>
+
+            <span class="technology">
+                Database
+            </span>
+
+            <span class="technology">
+                AI / NLP
+            </span>
+
+            <span class="technology">
+                Campus Map
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FUTURE ENHANCEMENTS
+========================================== -->
+
+<section class="about-section">
+
+    <h2>
+        🔮 Future Enhancements
+    </h2>
+
+
+    <p class="section-description">
+
+        The system can be further improved with
+        additional intelligent and interactive features.
+
+    </p>
+
+
+    <div class="future-list">
+
+
+        <div>
+            📍 Real-time location tracking
+        </div>
+
+
+        <div>
+            🧭 Turn-by-turn campus navigation
+        </div>
+
+
+        <div>
+            🤖 Advanced AI chatbot with natural language processing
+        </div>
+
+
+        <div>
+            📱 Mobile application for Android and iOS
+        </div>
+
+
+        <div>
+            🏢 Detailed information for every campus building
+        </div>
+
+
+        <div>
+            🔔 Campus announcements and notifications
+        </div>
+
+
+        <div>
+            ♿ Accessible routes for differently-abled users
+        </div>
+
+
+        <div>
+            🎤 Voice-based campus assistant
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     PROJECT INFORMATION
+========================================== -->
+
+<section class="about-section"
+         style="background:#f7f9fc;">
+
+    <h2>
+        📋 Project Information
+    </h2>
+
+
+    <div class="project-info">
+
+
+        <table>
+
+
+            <tr>
+
+                <td>
+                    Project Title
+                </td>
+
+                <td>
+                    KnowMyCampus
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Project Type
+                </td>
+
+                <td>
+                    Mini Project
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Domain
+                </td>
+
+                <td>
+                    Generative AI & AI Agents
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Application Area
+                </td>
+
+                <td>
+                    Smart Campus / Campus Navigation
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Institution
+                </td>
+
+                <td>
+                    Bannari Amman Institute of Technology
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Department
+                </td>
+
+                <td>
+                    Electronics and Communication Engineering
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Academic Year
+                </td>
+
+                <td>
+                    2026
+                </td>
+
+            </tr>
+
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     TEAM MEMBERS
+========================================== -->
+
+<section class="about-section">
+
+    <h2>
+        👥 Our Team
+    </h2>
+
+
+    <p class="section-description">
+
+        This mini project is developed as a
+        collaborative team project.
+
+    </p>
+
+
+    <div class="team-grid">
+
+
+        <div class="team-card">
+
+            <div class="team-icon">
+                👨‍💻
+            </div>
+
+            <h3>
+                Team Member 1
+            </h3>
+
+            <p>
+                AKSHAIY N
+            </p>
+
+        </div>
+
+
+
+        <div class="team-card">
+
+            <div class="team-icon">
+                👩‍💻
+            </div>
+
+            <h3>
+                Team Member 2
+            </h3>
+
+            <p>
+                NAVEETH VIGNESH B
+            </p>
+
+        </div>
+
+
+
+        <div class="team-card">
+
+            <div class="team-icon">
+                👨‍💻
+            </div>
+
+            <h3>
+                Team Member 3
+            </h3>
+
+            <p>
+                KIRTHICK CHANDRAN P R
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <p>
+        © 2026 KnowMyCampus |
+        Semester 5 Mini Project
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

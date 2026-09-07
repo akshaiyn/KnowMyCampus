@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KnowMyCampus | Bannari Amman Institute of Technology</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+===================================================== -->
+
+<nav>
+
+    <div class="logo-area">
+
+        <img src="assets/bait-logo.png"
+             alt="Bannari Amman Institute of Technology Logo">
+
+        <div>
+
+            <h2>KnowMyCampus</h2>
+
+            <p>Interactive Campus Discovery</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="departments.html">
+            Departments
+        </a>
+
+        <a href="facilities.html">
+            Facilities
+        </a>
+
+        <a href="campus-map.html">
+            Campus Map
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <span class="welcome">
+            BANNARI AMMAN INSTITUTE OF TECHNOLOGY
+        </span>
+
+
+        <h1>
+            Welcome to
+            <span>KnowMyCampus</span>
+        </h1>
+
+
+        <p>
+
+            Explore your campus, departments,
+            facilities and important locations
+            in one place.
+
+        </p>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search ECE, CSE, Library, Hostel..."
+            >
+
+
+            <button onclick="searchCampus()">
+
+                🔍 Search
+
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH RESULT -->
+
+        <div id="searchResult"
+             class="search-result">
+
+        </div>
+
+
+
+        <!-- QUICK BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <a href="departments.html"
+               class="primary-button">
+
+                Explore Departments
+
+            </a>
+
+
+            <a href="campus-map.html"
+               class="secondary-button">
+
+                🗺️ Campus Map
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- CAMPUS IMAGE -->
+
+    <div class="hero-image">
+
+        <img src="assets/campus-gate.png"
+             alt="Bannari Amman Institute of Technology Campus">
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPLORE CAMPUS
+===================================================== -->
+
+<section class="features"
+         id="explore">
+
+
+    <div class="section-title">
+
+        <span>EXPLORE</span>
+
+        <h2>Explore Campus</h2>
+
+        <p>
+            Everything you need to know about your campus.
+        </p>
+
+    </div>
+
+
+
+    <div class="cards">
+
+
+        <!-- DEPARTMENTS -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🏫
+            </div>
+
+
+            <h3>
+                Departments
+            </h3>
+
+
+            <p>
+                Explore all academic departments
+                available at Bannari Amman Institute
+                of Technology.
+            </p>
+
+
+            <a href="departments.html">
+
+                <button>
+                    Explore Departments →
+                </button>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- FACILITIES -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🏢
+            </div>
+
+
+            <h3>
+                Facilities
+            </h3>
+
+
+            <p>
+                Find libraries, laboratories,
+                hostels, canteen, sports and
+                other campus facilities.
+            </p>
+
+
+            <a href="facilities.html">
+
+                <button>
+                    Explore Facilities →
+                </button>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- CAMPUS MAP -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🗺️
+            </div>
+
+
+            <h3>
+                Campus Map
+            </h3>
+
+
+            <p>
+                Find important buildings,
+                departments and facilities
+                inside the campus.
+            </p>
+
+
+            <a href="campus-map.html">
+
+                <button>
+                    Open Campus Map →
+                </button>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- AI ASSISTANT -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🤖
+            </div>
+
+
+            <h3>
+                AI Assistant
+            </h3>
+
+
+            <p>
+                Ask questions about departments,
+                facilities and campus locations.
+            </p>
+
+
+            <a href="#assistant">
+
+                <button>
+                    Ask AI Assistant →
+                </button>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POPULAR INFORMATION
+===================================================== -->
+
+<section class="popular">
+
+
+    <div class="section-title">
+
+        <span>QUICK ACCESS</span>
+
+        <h2>Popular Campus Information</h2>
+
+    </div>
+
+
+
+    <div class="popular-grid">
+
+
+        <div class="popular-item">
+
+            <span>📚</span>
+
+            <div>
+
+                <h3>Central Library</h3>
+
+                <p>
+                    Books, journals and digital resources
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="popular-item">
+
+            <span>🧪</span>
+
+            <div>
+
+                <h3>Laboratories</h3>
+
+                <p>
+                    Department and research laboratories
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="popular-item">
+
+            <span>🏠</span>
+
+            <div>
+
+                <h3>Hostels</h3>
+
+                <p>
+                    Student accommodation facilities
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="popular-item">
+
+            <span>🍴</span>
+
+            <div>
+
+                <h3>Canteen</h3>
+
+                <p>
+                    Food and refreshments
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="popular-item">
+
+            <span>🚌</span>
+
+            <div>
+
+                <h3>Transport</h3>
+
+                <p>
+                    Campus transportation information
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="popular-item">
+
+            <span>🏥</span>
+
+            <div>
+
+                <h3>Medical Centre</h3>
+
+                <p>
+                    Campus healthcare facilities
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     AI ASSISTANT
+===================================================== -->
+
+<section class="assistant"
+         id="assistant">
+
+
+    <div class="assistant-content">
+
+
+        <span>SMART CAMPUS</span>
+
+
+        <h2>
+            🤖 KnowMyCampus AI Assistant
+        </h2>
+
+
+        <p>
+
+            Ask questions about departments,
+            facilities, laboratories, library,
+            hostel and campus locations.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="chat-box">
+
+
+        <div id="chatMessages"
+             class="chat-messages">
+
+
+            <div class="bot-message">
+
+                Hello! 👋
+
+                <br><br>
+
+                I am KnowMyCampus Assistant.
+
+                <br><br>
+
+                Ask me about departments,
+                library, hostel, laboratories
+                or campus facilities.
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="chat-input">
+
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Ask something about the campus..."
+            >
+
+
+            <button onclick="askAssistant()">
+
+                Send
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT PROJECT
+===================================================== -->
+
+<section class="about">
+
+
+    <div>
+
+        <span>MINI PROJECT</span>
+
+
+        <h2>
+            About KnowMyCampus
+        </h2>
+
+
+        <p>
+
+            KnowMyCampus is an interactive campus
+            discovery platform designed to help
+            students and visitors easily find
+            information about departments,
+            facilities and important campus locations.
+
+        </p>
+
+    </div>
+
+
+    <div class="technology-box">
+
+        <h3>
+            Technology Stack
+        </h3>
+
+
+        <div class="technology">
+
+            <span>HTML</span>
+
+            <span>CSS</span>
+
+            <span>JavaScript</span>
+
+            <span>Python</span>
+
+            <span>Flask</span>
+
+            <span>Database</span>
+
+            <span>AI</span>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <img src="assets/BIT logo.png"
+         alt="BIT Logo">
+
+
+    <h3>
+        KnowMyCampus
+    </h3>
+
+
+    <p>
+        Interactive Campus Discovery Platform
+    </p>
+
+
+    <p>
+        © 2026 KnowMyCampus | Semester 5 Mini Project
+    </p>
+
+
+</footer>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Map | KnowMyCampus</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ==============================
+           PAGE HEADER
+        ============================== */
+
+        .map-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: #eaf2ff;
+        }
+
+        .map-header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .map-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+
+        /* ==============================
+           MAP AREA
+        ============================== */
+
+        .map-section {
+            padding: 40px 5%;
+            background: #f7f9fc;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .map-container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .map-container p {
+            text-align: center;
+            color: #666;
+        }
+
+
+        /* ==============================
+           GEOBITS MAP
+        ============================== */
+
+        .map-frame {
+            width: 100%;
+            height: 650px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+
+        /* ==============================
+           OPEN MAP BUTTON
+        ============================== */
+
+        .map-button-area {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .map-button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #1d4ed8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .map-button:hover {
+            background: #163fa8;
+        }
+
+
+        /* ==============================
+           LOCATION SECTION
+        ============================== */
+
+        .location-section {
+            padding: 60px 5%;
+            background: white;
+        }
+
+        .location-section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .location-section > p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+
+        /* ==============================
+           LOCATION GRID
+        ============================== */
+
+        .location-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 22px;
+        }
+
+
+        /* ==============================
+           LOCATION CARD
+        ============================== */
+
+        .location-card {
+
+            padding: 25px;
+
+            background: #f7f9fc;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+
+        }
+
+
+        .location-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.15);
+
+        }
+
+
+        .location-icon {
+
+            font-size: 45px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .location-card h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .location-card p {
+
+            color: #666;
+
+            min-height: 50px;
+
+        }
+
+
+        /* ==============================
+           LOCATION BUTTON
+        ============================== */
+
+        .location-card button {
+
+            margin-top: 15px;
+
+            padding: 10px 18px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #1d4ed8;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+        }
+
+
+        .location-card button:hover {
+
+            background: #163fa8;
+
+        }
+
+
+        /* ==============================
+           SELECTED LOCATION
+        ============================== */
+
+        #selectedLocation {
+
+            max-width: 800px;
+
+            margin: 35px auto 0;
+
+            padding: 20px;
+
+            text-align: center;
+
+            background: #eaf2ff;
+
+            border-radius: 10px;
+
+            display: none;
+
+        }
+
+
+        #selectedLocation h3 {
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 768px) {
+
+            .map-header h1 {
+                font-size: 32px;
+            }
+
+            .map-frame {
+                height: 500px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================================
+     NAVIGATION
+================================================= -->
+
+<nav>
+
+    <h2>KnowMyCampus</h2>
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="departments.html">
+            Departments
+        </a>
+
+        <a href="facilities.html">
+            Facilities
+        </a>
+
+        <a href="campus-map.html">
+            Campus Map
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =================================================
+     HEADER
+================================================= -->
+
+<section class="map-header">
+
+    <h1>
+        🗺️ Interactive Campus Map
+    </h1>
+
+    <p>
+
+        Explore important buildings and
+        facilities inside the BIT campus.
+
+    </p>
+
+</section>
+
+
+
+<!-- =================================================
+     GEOBITS MAP
+================================================= -->
+
+<section class="map-section">
+
+    <div class="map-container">
+
+        <h2>
+            GeoBITs Campus Navigation
+        </h2>
+
+        <p>
+            Use the map below to explore the campus.
+        </p>
+
+
+        <iframe
+
+            class="map-frame"
+
+            src="https://geobits.onrender.com/"
+
+            title="GeoBITs Campus Map"
+
+            allow="geolocation">
+
+        </iframe>
+
+
+        <div class="map-button-area">
+
+            <a
+
+                href="https://geobits.onrender.com/"
+
+                target="_blank"
+
+                class="map-button">
+
+                🗺️ Open GeoBITs Full Map
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     IMPORTANT LOCATIONS
+================================================= -->
+
+<section class="location-section">
+
+    <h2>
+        Important Campus Locations
+    </h2>
+
+    <p>
+        Select a location to view information
+        and open the campus map.
+    </p>
+
+
+    <div class="location-grid">
+
+
+        <!-- ACADEMIC BLOCK -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                🏫
+            </div>
+
+            <h3>
+                Academic Blocks
+            </h3>
+
+            <p>
+                Departments, classrooms
+                and laboratories.
+            </p>
+
+            <button onclick="selectLocation('Academic Blocks')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LIBRARY -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                📚
+            </div>
+
+            <h3>
+                Central Library
+            </h3>
+
+            <p>
+                Books, journals and
+                learning resources.
+            </p>
+
+            <button onclick="selectLocation('Central Library')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+        <!-- HOSTEL -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                🏠
+            </div>
+
+            <h3>
+                Hostels
+            </h3>
+
+            <p>
+                Student residential
+                facilities.
+            </p>
+
+            <button onclick="selectLocation('Hostels')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+        <!-- CANTEEN -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                🍴
+            </div>
+
+            <h3>
+                Canteen
+            </h3>
+
+            <p>
+                Food and refreshment
+                facilities.
+            </p>
+
+            <button onclick="selectLocation('Canteen')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SPORTS -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                🏟️
+            </div>
+
+            <h3>
+                Sports Facilities
+            </h3>
+
+            <p>
+                Sports grounds and
+                recreational facilities.
+            </p>
+
+            <button onclick="selectLocation('Sports Facilities')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+        <!-- MEDICAL -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                🏥
+            </div>
+
+            <h3>
+                Medical Centre
+            </h3>
+
+            <p>
+                Campus healthcare
+                facilities.
+            </p>
+
+            <button onclick="selectLocation('Medical Centre')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ATM -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                🏦
+            </div>
+
+            <h3>
+                ATM & Bank
+            </h3>
+
+            <p>
+                Banking and ATM
+                facilities.
+            </p>
+
+            <button onclick="selectLocation('ATM & Bank')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+        <!-- AUDITORIUM -->
+
+        <div class="location-card">
+
+            <div class="location-icon">
+                🎓
+            </div>
+
+            <h3>
+                Auditorium
+            </h3>
+
+            <p>
+                Seminars, conferences
+                and events.
+            </p>
+
+            <button onclick="selectLocation('Auditorium')">
+
+                📍 View Location
+
+            </button>
+
+        </div>
+
+
+
+    </div>
+
+
+    <!-- SELECTED LOCATION -->
+
+    <div id="selectedLocation">
+
+        <h3 id="locationName"></h3>
+
+        <p id="locationMessage"></p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     FOOTER
+================================================= -->
+
+<footer>
+
+    <p>
+        © 2026 KnowMyCampus |
+        Semester 5 Mini Project
+    </p>
+
+</footer>
+
+
+
+<!-- =================================================
+     JAVASCRIPT
+================================================= -->
+
+<script>
+
+function selectLocation(location) {
+
+    const box =
+        document.getElementById("selectedLocation");
+
+    const name =
+        document.getElementById("locationName");
+
+    const message =
+        document.getElementById("locationMessage");
+
+
+    name.innerHTML =
+        "📍 " + location;
+
+
+    message.innerHTML =
+        "You selected <strong>" +
+        location +
+        "</strong>. " +
+        "Use the GeoBITs map above to explore the campus location.";
+
+
+    box.style.display = "block";
+
+
+    box.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
