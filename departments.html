@@ -8,9 +8,114 @@
     <title>Departments | KnowMyCampus</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ================= DEPARTMENT DETAILS POPUP ================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 750px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: popup 0.3s ease;
+        }
+
+        @keyframes popup {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
+
+        .modal-icon {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .modal-content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .modal-content h3 {
+            color: #1f2937;
+            margin-top: 20px;
+        }
+
+        .modal-content p {
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .modal-content ul {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .detail-box {
+            background: #f1f5ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .card button {
+            cursor: pointer;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+    </style>
+
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVIGATION ================= -->
 
@@ -19,14 +124,21 @@
     <h2>KnowMyCampus</h2>
 
     <div>
+
         <a href="index.html">Home</a>
+
         <a href="departments.html">Departments</a>
+
         <a href="facilities.html">Facilities</a>
+
         <a href="campus-map.html">Campus Map</a>
+
         <a href="about.html">About</a>
+
     </div>
 
 </nav>
+
 
 
 <!-- ================= DEPARTMENTS ================= -->
@@ -44,7 +156,7 @@
     <div class="cards">
 
 
-        <!-- 1 -->
+        <!-- 1. CSD -->
 
         <div class="card">
 
@@ -53,9 +165,8 @@
             <h2>Computer Science & Design</h2>
 
             <p>
-                Computer Science and Design combines
-                computing, software development and design
-                concepts.
+                Computer Science and Design combines computing,
+                software development and design concepts.
             </p>
 
             <button onclick="showDepartment('Computer Science & Design')">
@@ -65,7 +176,8 @@
         </div>
 
 
-        <!-- 2 -->
+
+        <!-- 2. CSE -->
 
         <div class="card">
 
@@ -85,7 +197,8 @@
         </div>
 
 
-        <!-- 3 -->
+
+        <!-- 3. EEE -->
 
         <div class="card">
 
@@ -105,7 +218,8 @@
         </div>
 
 
-        <!-- 4 -->
+
+        <!-- 4. ECE -->
 
         <div class="card">
 
@@ -125,7 +239,8 @@
         </div>
 
 
-        <!-- 5 -->
+
+        <!-- 5. EIE -->
 
         <div class="card">
 
@@ -145,7 +260,8 @@
         </div>
 
 
-        <!-- 6 -->
+
+        <!-- 6. ISE -->
 
         <div class="card">
 
@@ -165,7 +281,8 @@
         </div>
 
 
-        <!-- 7 -->
+
+        <!-- 7. Mechanical -->
 
         <div class="card">
 
@@ -185,7 +302,8 @@
         </div>
 
 
-        <!-- 8 -->
+
+        <!-- 8. Mechatronics -->
 
         <div class="card">
 
@@ -205,7 +323,8 @@
         </div>
 
 
-        <!-- 9 -->
+
+        <!-- 9. Agricultural -->
 
         <div class="card">
 
@@ -225,7 +344,8 @@
         </div>
 
 
-        <!-- 10 -->
+
+        <!-- 10. AI & DS -->
 
         <div class="card">
 
@@ -245,7 +365,8 @@
         </div>
 
 
-        <!-- 11 -->
+
+        <!-- 11. AI & ML -->
 
         <div class="card">
 
@@ -265,7 +386,8 @@
         </div>
 
 
-        <!-- 12 -->
+
+        <!-- 12. Biotechnology -->
 
         <div class="card">
 
@@ -285,7 +407,8 @@
         </div>
 
 
-        <!-- 13 -->
+
+        <!-- 13. CSBS -->
 
         <div class="card">
 
@@ -305,7 +428,8 @@
         </div>
 
 
-        <!-- 14 -->
+
+        <!-- 14. Computer Technology -->
 
         <div class="card">
 
@@ -325,7 +449,8 @@
         </div>
 
 
-        <!-- 15 -->
+
+        <!-- 15. Food Technology -->
 
         <div class="card">
 
@@ -345,7 +470,8 @@
         </div>
 
 
-        <!-- 16 -->
+
+        <!-- 16. Fashion Technology -->
 
         <div class="card">
 
@@ -365,7 +491,8 @@
         </div>
 
 
-        <!-- 17 -->
+
+        <!-- 17. Information Technology -->
 
         <div class="card">
 
@@ -385,7 +512,8 @@
         </div>
 
 
-        <!-- 18 -->
+
+        <!-- 18. Textile Technology -->
 
         <div class="card">
 
@@ -410,6 +538,64 @@
 </section>
 
 
+
+<!-- ================================================= -->
+<!--              DEPARTMENT DETAILS POPUP             -->
+<!-- ================================================= -->
+
+<div id="departmentModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-btn" onclick="closeDepartment()">
+            &times;
+        </span>
+
+        <div id="departmentIcon" class="modal-icon">
+            🎓
+        </div>
+
+        <h2 id="departmentTitle">
+            Department Name
+        </h2>
+
+        <div class="detail-box">
+
+            <h3>📖 About the Department</h3>
+
+            <p id="departmentDescription">
+                Department information will appear here.
+            </p>
+
+        </div>
+
+
+        <div class="detail-box">
+
+            <h3>📚 Major Areas</h3>
+
+            <ul id="departmentAreas">
+            </ul>
+
+        </div>
+
+
+        <div class="detail-box">
+
+            <h3>💼 Career Opportunities</h3>
+
+            <p id="departmentCareer">
+                Career information will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
@@ -421,7 +607,490 @@
 </footer>
 
 
-<script src="script.js"></script>
+
+<!-- ================= DEPARTMENT JAVASCRIPT ================= -->
+
+<script>
+
+const departmentData = {
+
+    "Computer Science & Design": {
+
+        icon: "💻",
+
+        description:
+        "Computer Science & Design combines computer science principles with design concepts. Students learn programming, software development, computing and user-oriented design.",
+
+        areas: [
+            "Programming and Software Development",
+            "Computer Science Fundamentals",
+            "UI and UX Design",
+            "Web and Application Development",
+            "Database Systems"
+        ],
+
+        career:
+        "Career opportunities include software development, web development, UI/UX design, application development and technology-related roles."
+    },
+
+
+    "Computer Science & Engineering": {
+
+        icon: "🖥️",
+
+        description:
+        "Computer Science & Engineering focuses on the design and development of computer software and computing systems.",
+
+        areas: [
+            "Programming",
+            "Data Structures and Algorithms",
+            "Database Management",
+            "Computer Networks",
+            "Operating Systems",
+            "Artificial Intelligence"
+        ],
+
+        career:
+        "Career opportunities include software engineer, application developer, system engineer, web developer and technology professional."
+    },
+
+
+    "Electrical & Electronics Engineering": {
+
+        icon: "⚡",
+
+        description:
+        "Electrical & Electronics Engineering deals with electrical systems, electronic devices, power systems, machines and control technologies.",
+
+        areas: [
+            "Electrical Machines",
+            "Power Electronics",
+            "Power Systems",
+            "Control Systems",
+            "Electrical Circuits",
+            "Renewable Energy"
+        ],
+
+        career:
+        "Career opportunities include electrical engineer, power systems engineer, control engineer, maintenance engineer and automation-related roles."
+    },
+
+
+    "Electronics & Communication Engineering": {
+
+        icon: "📡",
+
+        description:
+        "Electronics & Communication Engineering focuses on electronic systems, communication technologies, signal processing, embedded systems and semiconductor technologies.",
+
+        areas: [
+            "Digital Electronics",
+            "Analog Electronics",
+            "Communication Systems",
+            "Signal Processing",
+            "Embedded Systems",
+            "VLSI Design"
+        ],
+
+        career:
+        "Career opportunities include embedded systems engineer, VLSI engineer, electronics engineer, communication engineer and software-related roles."
+    },
+
+
+    "Electronics & Instrumentation Engineering": {
+
+        icon: "🎛️",
+
+        description:
+        "Electronics & Instrumentation Engineering focuses on measurement, sensors, instrumentation, automation and control systems.",
+
+        areas: [
+            "Sensors and Transducers",
+            "Industrial Instrumentation",
+            "Process Control",
+            "Measurement Systems",
+            "Automation",
+            "Control Engineering"
+        ],
+
+        career:
+        "Career opportunities include instrumentation engineer, automation engineer, control engineer and industrial systems engineer."
+    },
+
+
+    "Information Science & Engineering": {
+
+        icon: "🔐",
+
+        description:
+        "Information Science & Engineering focuses on information systems, computing technologies, software development, databases and networking.",
+
+        areas: [
+            "Information Systems",
+            "Database Management",
+            "Software Engineering",
+            "Computer Networks",
+            "Programming",
+            "Cybersecurity"
+        ],
+
+        career:
+        "Career opportunities include software developer, database professional, network engineer, system administrator and information technology roles."
+    },
+
+
+    "Mechanical Engineering": {
+
+        icon: "⚙️",
+
+        description:
+        "Mechanical Engineering deals with the design, analysis, manufacturing and operation of mechanical systems.",
+
+        areas: [
+            "Machine Design",
+            "Manufacturing",
+            "Thermal Engineering",
+            "Fluid Mechanics",
+            "CAD and Engineering Design",
+            "Automation"
+        ],
+
+        career:
+        "Career opportunities include mechanical engineer, design engineer, manufacturing engineer, production engineer and maintenance engineer."
+    },
+
+
+    "Mechatronics Engineering": {
+
+        icon: "🤖",
+
+        description:
+        "Mechatronics Engineering integrates mechanical engineering, electronics, control systems, robotics and automation.",
+
+        areas: [
+            "Robotics",
+            "Automation",
+            "Control Systems",
+            "Embedded Systems",
+            "Mechanical Design",
+            "Sensors and Actuators"
+        ],
+
+        career:
+        "Career opportunities include robotics engineer, automation engineer, control engineer, embedded engineer and mechatronics engineer."
+    },
+
+
+    "Agricultural Engineering": {
+
+        icon: "🌾",
+
+        description:
+        "Agricultural Engineering applies engineering principles to agricultural production, farm machinery, irrigation and agricultural technology.",
+
+        areas: [
+            "Farm Machinery",
+            "Irrigation Engineering",
+            "Agricultural Processing",
+            "Soil and Water Management",
+            "Agricultural Technology",
+            "Renewable Energy in Agriculture"
+        ],
+
+        career:
+        "Career opportunities include agricultural engineer, farm technology professional, irrigation engineer and agricultural equipment-related roles."
+    },
+
+
+    "Artificial Intelligence & Data Science": {
+
+        icon: "📊",
+
+        description:
+        "Artificial Intelligence & Data Science focuses on extracting useful information from data and developing intelligent computing systems.",
+
+        areas: [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Data Analytics",
+            "Data Visualization",
+            "Deep Learning",
+            "Big Data"
+        ],
+
+        career:
+        "Career opportunities include data analyst, data scientist, machine learning engineer, AI engineer and data technology professional."
+    },
+
+
+    "Artificial Intelligence & Machine Learning": {
+
+        icon: "🧠",
+
+        description:
+        "Artificial Intelligence & Machine Learning focuses on developing computational systems that can learn from data and perform intelligent tasks.",
+
+        areas: [
+            "Machine Learning",
+            "Deep Learning",
+            "Artificial Intelligence",
+            "Computer Vision",
+            "Natural Language Processing",
+            "Intelligent Systems"
+        ],
+
+        career:
+        "Career opportunities include AI engineer, machine learning engineer, computer vision engineer, data professional and software developer."
+    },
+
+
+    "Biotechnology": {
+
+        icon: "🧬",
+
+        description:
+        "Biotechnology combines biological sciences with technology to develop applications in healthcare, agriculture, food and industrial processes.",
+
+        areas: [
+            "Molecular Biology",
+            "Genetics",
+            "Microbiology",
+            "Bioprocessing",
+            "Bioinformatics",
+            "Biotechnology Applications"
+        ],
+
+        career:
+        "Career opportunities include biotechnology professional, laboratory professional, research assistant, quality professional and bioinformatics-related roles."
+    },
+
+
+    "Computer Science & Business Systems": {
+
+        icon: "💼",
+
+        description:
+        "Computer Science & Business Systems combines computing knowledge with business and enterprise-oriented technologies.",
+
+        areas: [
+            "Programming",
+            "Database Systems",
+            "Business Analytics",
+            "Enterprise Systems",
+            "Management Concepts",
+            "Information Systems"
+        ],
+
+        career:
+        "Career opportunities include software developer, business analyst, technology consultant, system analyst and enterprise technology professional."
+    },
+
+
+    "Computer Technology": {
+
+        icon: "🖱️",
+
+        description:
+        "Computer Technology focuses on computer hardware, software, networking, programming and modern computing systems.",
+
+        areas: [
+            "Computer Hardware",
+            "Programming",
+            "Networking",
+            "Database Systems",
+            "Web Technologies",
+            "Computer Applications"
+        ],
+
+        career:
+        "Career opportunities include software developer, network professional, system administrator, technical support professional and application developer."
+    },
+
+
+    "Food Technology": {
+
+        icon: "🍱",
+
+        description:
+        "Food Technology focuses on food processing, preservation, quality, safety and the development of food products.",
+
+        areas: [
+            "Food Processing",
+            "Food Preservation",
+            "Food Safety",
+            "Quality Control",
+            "Food Packaging",
+            "Food Product Development"
+        ],
+
+        career:
+        "Career opportunities include food technologist, quality control professional, food processing professional and food product development roles."
+    },
+
+
+    "Fashion Technology": {
+
+        icon: "👗",
+
+        description:
+        "Fashion Technology combines textile knowledge, apparel production, garment manufacturing and fashion-related technologies.",
+
+        areas: [
+            "Apparel Production",
+            "Garment Manufacturing",
+            "Fashion Design",
+            "Textile Technology",
+            "Pattern Making",
+            "Production Management"
+        ],
+
+        career:
+        "Career opportunities include apparel technologist, garment production professional, fashion technology professional and textile industry roles."
+    },
+
+
+    "Information Technology": {
+
+        icon: "🌐",
+
+        description:
+        "Information Technology focuses on the development, management and application of computer-based information systems.",
+
+        areas: [
+            "Software Development",
+            "Cloud Computing",
+            "Networking",
+            "Cybersecurity",
+            "Database Systems",
+            "Web Technologies"
+        ],
+
+        career:
+        "Career opportunities include software developer, cloud professional, network engineer, cybersecurity professional and IT consultant."
+    },
+
+
+    "Textile Technology": {
+
+        icon: "🧵",
+
+        description:
+        "Textile Technology focuses on textile materials, manufacturing processes, textile processing and product development.",
+
+        areas: [
+            "Textile Materials",
+            "Spinning",
+            "Weaving",
+            "Knitting",
+            "Textile Processing",
+            "Textile Product Development"
+        ],
+
+        career:
+        "Career opportunities include textile technologist, production professional, quality control professional, textile processing professional and apparel industry roles."
+    }
+
+};
+
+
+
+/* ================= SHOW DEPARTMENT ================= */
+
+function showDepartment(departmentName) {
+
+    const department = departmentData[departmentName];
+
+    if (!department) {
+
+        alert("Department information is not available.");
+
+        return;
+
+    }
+
+
+    document.getElementById("departmentIcon").textContent =
+        department.icon;
+
+
+    document.getElementById("departmentTitle").textContent =
+        departmentName;
+
+
+    document.getElementById("departmentDescription").textContent =
+        department.description;
+
+
+    document.getElementById("departmentCareer").textContent =
+        department.career;
+
+
+    const areasList =
+        document.getElementById("departmentAreas");
+
+    areasList.innerHTML = "";
+
+
+    department.areas.forEach(function(area) {
+
+        const li = document.createElement("li");
+
+        li.textContent = area;
+
+        areasList.appendChild(li);
+
+    });
+
+
+    document.getElementById("departmentModal").style.display =
+        "flex";
+
+}
+
+
+
+/* ================= CLOSE POPUP ================= */
+
+function closeDepartment() {
+
+    document.getElementById("departmentModal").style.display =
+        "none";
+
+}
+
+
+
+/* ================= CLOSE WHEN CLICKING OUTSIDE ================= */
+
+window.onclick = function(event) {
+
+    const modal =
+        document.getElementById("departmentModal");
+
+    if (event.target === modal) {
+
+        modal.style.display = "none";
+
+    }
+
+};
+
+
+
+/* ================= ESC KEY CLOSE ================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeDepartment();
+
+    }
+
+});
+
+</script>
+
 
 </body>
 
