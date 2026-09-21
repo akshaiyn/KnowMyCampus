@@ -8,9 +8,97 @@
     <title>Facilities | KnowMyCampus</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ================= FACILITY DETAILS POPUP ================= */
+
+        .facility-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .facility-modal-content {
+            background: white;
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+            animation: popup 0.3s ease;
+        }
+
+        @keyframes popup {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .facility-modal-content h2 {
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .facility-modal-content p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .close-button:hover {
+            color: red;
+        }
+
+        .facility-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .details-button {
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .details-button:hover {
+            opacity: 0.85;
+        }
+
+    </style>
+
 </head>
 
 <body>
+
 
 <!-- ================= NAVIGATION ================= -->
 
@@ -29,15 +117,15 @@
 </nav>
 
 
-<!-- ================= FACILITIES HEADER ================= -->
+<!-- ================= HEADER ================= -->
 
-<section class="facility-header">
+<section class="hero">
 
     <h1>Campus Facilities</h1>
 
     <p>
-        Explore the facilities and essential services
-        available at Bannari Amman Institute of Technology.
+        Explore the facilities and essential services available
+        at Bannari Amman Institute of Technology.
     </p>
 
 </section>
@@ -50,7 +138,7 @@
     <div class="cards">
 
 
-        <!-- Library -->
+        <!-- 1. LIBRARY -->
 
         <div class="card">
 
@@ -63,14 +151,15 @@
                 reference materials and study spaces.
             </p>
 
-            <button onclick="showFacility('Central Library')">
+            <button class="details-button"
+                onclick="showFacility('Central Library')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Hostel -->
+        <!-- 2. HOSTELS -->
 
         <div class="card">
 
@@ -83,14 +172,15 @@
                 accommodation and essential amenities.
             </p>
 
-            <button onclick="showFacility('Hostels')">
+            <button class="details-button"
+                onclick="showFacility('Hostels')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Canteen -->
+        <!-- 3. CANTEEN -->
 
         <div class="card">
 
@@ -103,14 +193,15 @@
                 for students, faculty and visitors.
             </p>
 
-            <button onclick="showFacility('Canteen')">
+            <button class="details-button"
+                onclick="showFacility('Canteen')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Medical -->
+        <!-- 4. MEDICAL CENTRE -->
 
         <div class="card">
 
@@ -123,14 +214,15 @@
                 available within the campus.
             </p>
 
-            <button onclick="showFacility('Medical Centre')">
+            <button class="details-button"
+                onclick="showFacility('Medical Centre')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Sports -->
+        <!-- 5. SPORTS -->
 
         <div class="card">
 
@@ -143,14 +235,15 @@
                 physical fitness and recreational activities.
             </p>
 
-            <button onclick="showFacility('Sports Facilities')">
+            <button class="details-button"
+                onclick="showFacility('Sports Facilities')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Transport -->
+        <!-- 6. TRANSPORT -->
 
         <div class="card">
 
@@ -159,18 +252,19 @@
             <h2>Transport</h2>
 
             <p>
-                Campus transportation facilities for students
-                and staff travelling from different locations.
+                Campus transportation facilities for
+                students and staff travelling from different locations.
             </p>
 
-            <button onclick="showFacility('Transport')">
+            <button class="details-button"
+                onclick="showFacility('Transport')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Auditorium -->
+        <!-- 7. AUDITORIUM -->
 
         <div class="card">
 
@@ -183,14 +277,15 @@
                 cultural programs and academic events.
             </p>
 
-            <button onclick="showFacility('Auditorium')">
+            <button class="details-button"
+                onclick="showFacility('Auditorium')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Bank -->
+        <!-- 8. BANK -->
 
         <div class="card">
 
@@ -203,14 +298,15 @@
                 financial transactions on campus.
             </p>
 
-            <button onclick="showFacility('Bank & ATM')">
+            <button class="details-button"
+                onclick="showFacility('Bank & ATM')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- WiFi -->
+        <!-- 9. WIFI -->
 
         <div class="card">
 
@@ -223,14 +319,15 @@
                 for academic and campus activities.
             </p>
 
-            <button onclick="showFacility('Wi-Fi & Internet')">
+            <button class="details-button"
+                onclick="showFacility('Wi-Fi & Internet')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Laboratories -->
+        <!-- 10. LABORATORIES -->
 
         <div class="card">
 
@@ -239,22 +336,23 @@
             <h2>Laboratories</h2>
 
             <p>
-                Department laboratories equipped for practical
-                learning, experiments and research.
+                Department laboratories equipped for
+                practical learning, experiments and research.
             </p>
 
-            <button onclick="showFacility('Laboratories')">
+            <button class="details-button"
+                onclick="showFacility('Laboratories')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Cafeteria -->
+        <!-- 11. FOOD COURTS -->
 
         <div class="card">
 
-            <div class="icon">☕</div>
+            <div class="icon">🍽️</div>
 
             <h2>Food Courts</h2>
 
@@ -263,14 +361,15 @@
                 refreshments and dining options.
             </p>
 
-            <button onclick="showFacility('Food Courts')">
+            <button class="details-button"
+                onclick="showFacility('Food Courts')">
                 View Details
             </button>
 
         </div>
 
 
-        <!-- Innovation -->
+        <!-- 12. INNOVATION -->
 
         <div class="card">
 
@@ -283,7 +382,8 @@
                 projects, entrepreneurship and development.
             </p>
 
-            <button onclick="showFacility('Innovation & Research')">
+            <button class="details-button"
+                onclick="showFacility('Innovation & Research')">
                 View Details
             </button>
 
@@ -293,6 +393,34 @@
     </div>
 
 </section>
+
+
+<!-- ================= FACILITY DETAILS POPUP ================= -->
+
+<div id="facilityModal" class="facility-modal">
+
+    <div class="facility-modal-content">
+
+        <span class="close-button"
+              onclick="closeFacility()">
+            &times;
+        </span>
+
+        <div id="facilityIcon"
+             class="facility-icon">
+        </div>
+
+        <h2 id="facilityTitle">
+            Facility
+        </h2>
+
+        <p id="facilityDescription">
+            Facility information will appear here.
+        </p>
+
+    </div>
+
+</div>
 
 
 <!-- ================= FOOTER ================= -->
@@ -306,7 +434,192 @@
 </footer>
 
 
-<script src="script.js"></script>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showFacility(facilityName) {
+
+    let title = "";
+    let description = "";
+    let icon = "";
+
+    switch (facilityName) {
+
+        case "Central Library":
+
+            title = "Central Library";
+            icon = "📚";
+
+            description =
+                "The Central Library provides students and faculty with access to books, journals, digital resources, reference materials and study spaces. It supports academic learning, research and knowledge development.";
+
+            break;
+
+
+        case "Hostels":
+
+            title = "Hostels";
+            icon = "🏠";
+
+            description =
+                "The campus provides hostel facilities for students. The hostels offer residential accommodation along with essential amenities and facilities that support student life.";
+
+            break;
+
+
+        case "Canteen":
+
+            title = "Canteen";
+            icon = "🍴";
+
+            description =
+                "The campus canteen provides food and refreshments for students, faculty members and visitors. It supports the daily food and refreshment requirements of the campus community.";
+
+            break;
+
+
+        case "Medical Centre":
+
+            title = "Medical Centre";
+            icon = "🏥";
+
+            description =
+                "The Medical Centre provides basic healthcare and first-aid services for students and staff. It supports the health and wellbeing of the campus community.";
+
+            break;
+
+
+        case "Sports Facilities":
+
+            title = "Sports Facilities";
+            icon = "🏟️";
+
+            description =
+                "The campus provides sports grounds and recreational facilities that support physical fitness, sports activities and student participation in recreational programs.";
+
+            break;
+
+
+        case "Transport":
+
+            title = "Transport";
+            icon = "🚌";
+
+            description =
+                "Campus transportation facilities support students and staff travelling to and from different locations. The transport system helps provide convenient campus connectivity.";
+
+            break;
+
+
+        case "Auditorium":
+
+            title = "Auditorium";
+            icon = "🎓";
+
+            description =
+                "The auditorium is used for seminars, conferences, cultural programs, academic activities, presentations and other important campus events.";
+
+            break;
+
+
+        case "Bank & ATM":
+
+            title = "Bank & ATM";
+            icon = "🏦";
+
+            description =
+                "Banking and ATM facilities provide convenient access to financial services for students and staff within the campus.";
+
+            break;
+
+
+        case "Wi-Fi & Internet":
+
+            title = "Wi-Fi & Internet";
+            icon = "📶";
+
+            description =
+                "Campus internet and Wi-Fi facilities provide network connectivity for academic activities, online learning, research, communication and other campus requirements.";
+
+            break;
+
+
+        case "Laboratories":
+
+            title = "Laboratories";
+            icon = "🧪";
+
+            description =
+                "Department laboratories provide facilities for practical learning, experiments, project development, demonstrations and research activities.";
+
+            break;
+
+
+        case "Food Courts":
+
+            title = "Food Courts";
+            icon = "🍽️";
+
+            description =
+                "Food courts provide food and beverage facilities for students, faculty and visitors, offering convenient options for refreshments and dining.";
+
+            break;
+
+
+        case "Innovation & Research":
+
+            title = "Innovation & Research";
+            icon = "💡";
+
+            description =
+                "Innovation and research facilities support student projects, research activities, innovation, entrepreneurship, technology development and collaborative projects.";
+
+            break;
+
+    }
+
+
+    document.getElementById("facilityTitle").innerText = title;
+
+    document.getElementById("facilityDescription").innerText =
+        description;
+
+    document.getElementById("facilityIcon").innerText =
+        icon;
+
+    document.getElementById("facilityModal").style.display =
+        "flex";
+}
+
+
+/* CLOSE POPUP */
+
+function closeFacility() {
+
+    document.getElementById("facilityModal").style.display =
+        "none";
+
+}
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+window.onclick = function(event) {
+
+    let modal =
+        document.getElementById("facilityModal");
+
+    if (event.target === modal) {
+
+        modal.style.display = "none";
+
+    }
+
+};
+
+</script>
+
 
 </body>
 
