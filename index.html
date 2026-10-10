@@ -1,635 +1,458 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>KnowMyCampus | Bannari Amman Institute of Technology</title>
+    <title>KnowMyCampus | Interactive Campus Discovery</title>
+    <meta name="description" content="Explore Bannari Amman Institute of Technology departments, facilities, campus locations and campus information.">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
+<!-- NAVIGATION -->
+<header class="site-header">
+    <a class="brand" href="index.html" aria-label="KnowMyCampus Home">
+        <img src="assets/bait-logo.png"
+             alt="Bannari Amman Institute of Technology Logo"
+             class="brand-logo"
+             onerror="this.style.display='none'">
 
-<!-- =====================================================
-     NAVIGATION BAR
-===================================================== -->
-
-<nav>
-
-    <div class="logo-area">
-
-        <img src="bait-logo.png"
-             alt="Bannari Amman Institute of Technology Logo">
-
-        <div>
-
-            <h2>KnowMyCampus</h2>
-
-            <p>Interactive Campus Discovery</p>
-
-        </div>
-
-    </div>
-
-
-    <div class="nav-links">
-
-        <a href="index.html">Home</a>
-
-        <a href="departments.html">
-            Departments
-        </a>
-
-        <a href="facilities.html">
-            Facilities
-        </a>
-
-        <a href="campus-map.html">
-            Campus Map
-        </a>
-
-        <a href="about.html">
-            About
-        </a>
-
-    </div>
-
-</nav>
-
-
-
-<!-- =====================================================
-     HERO SECTION
-===================================================== -->
-
-<section class="hero">
-
-
-    <div class="hero-content">
-
-
-        <span class="welcome">
-            BANNARI AMMAN INSTITUTE OF TECHNOLOGY
+        <span class="brand-text">
+            <strong>KnowMyCampus</strong>
+            <small>Interactive Campus Discovery</small>
         </span>
+    </a>
 
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+        ☰
+    </button>
 
-        <h1>
-            Welcome to
-            <span>KnowMyCampus</span>
-        </h1>
+    <nav class="main-nav" id="mainNav">
+        <a class="active" href="index.html">Home</a>
+        <a href="departments.html">Departments</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="campus-map.html">Campus Map</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
 
+<main>
 
-        <p>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-inner">
 
-            Explore your campus, departments,
-            facilities and important locations
-            in one place.
+        <div class="hero-content">
+            <span class="eyebrow">
+                YOUR CAMPUS, ONE SMART PLATFORM
+            </span>
 
-        </p>
+            <h1>
+                Discover Your Campus,
+                <span>Smarter.</span>
+            </h1>
 
+            <p class="hero-description">
+                Find departments, explore campus facilities,
+                discover important locations and get campus
+                information — all in one place.
+            </p>
 
+            <form class="search-form" id="campusSearchForm">
+                <span class="search-icon">⌕</span>
 
-        <!-- SEARCH -->
+                <input type="search"
+                       id="searchBox"
+                       placeholder="Search departments, library, hostel..."
+                       aria-label="Search campus">
 
-        <div class="search-box">
+                <button type="submit" class="btn btn-primary">
+                    Search
+                </button>
+            </form>
 
-            <input
-                type="text"
-                id="searchBox"
-                placeholder="Search ECE, CSE, Library, Hostel..."
-            >
+            <p class="search-hint">
+                Try: ECE, library, hostel or campus map
+            </p>
 
+            <div class="hero-actions">
+                <a href="departments.html" class="btn btn-primary">
+                    Explore Departments →
+                </a>
 
-            <button onclick="searchCampus()">
+                <a href="campus-map.html" class="btn btn-outline">
+                    <span>📍</span> Open Campus Map
+                </a>
+            </div>
 
-                🔍 Search
-
-            </button>
-
+            <div class="hero-note">
+                <span class="status-dot"></span>
+                Your guide to Bannari Amman Institute of Technology
+            </div>
         </div>
 
+        <div class="hero-visual">
+            <div class="campus-image-frame">
+                <img src="assets/campus.jpg"
+                     alt="Bannari Amman Institute of Technology campus"
+                     class="campus-hero-image"
+                     loading="eager"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
 
-        <!-- SEARCH RESULT -->
+                <div class="image-placeholder" style="display:none">
+                    <span>🏫</span>
+                    <strong>Add your campus photo</strong>
+                    <small>Upload campus.jpg to your repository</small>
+                </div>
+            </div>
 
-        <div id="searchResult"
-             class="search-result">
-
-        </div>
-
-
-
-        <!-- QUICK BUTTONS -->
-
-        <div class="hero-buttons">
-
-            <a href="departments.html"
-               class="primary-button">
-
-                Explore Departments
-
-            </a>
-
+            <div class="floating-card floating-card-top">
+                <span class="floating-icon">🎓</span>
+                <div>
+                    <strong>Explore Academics</strong>
+                    <small>Discover departments</small>
+                </div>
+            </div>
 
             <a href="campus-map.html"
-               class="secondary-button">
-
-                🗺️ Campus Map
-
+               class="floating-card floating-card-bottom">
+                <span class="floating-icon">📍</span>
+                <div>
+                    <strong>Find Your Location</strong>
+                    <small>Explore the campus map ↗</small>
+                </div>
             </a>
 
+            <div class="decorative-circle"></div>
         </div>
 
-
     </div>
-
-
-
-    <!-- CAMPUS IMAGE -->
-
-    <div class="hero-image">
-
-        <img src="assets/campus-gate.png"
-             alt="Bannari Amman Institute of Technology Campus">
-
-    </div>
-
-
 </section>
 
-
-
-<!-- =====================================================
-     EXPLORE CAMPUS
-===================================================== -->
-
-<section class="features"
-         id="explore">
-
-
-    <div class="section-title">
-
-        <span>EXPLORE</span>
-
-        <h2>Explore Campus</h2>
-
+<!-- EXPLORE CAMPUS -->
+<section class="section explore-section" id="explore">
+    <div class="section-heading">
+        <span class="eyebrow">EXPLORE WITH EASE</span>
+        <h2>Everything You Need, <span>In One Place</span></h2>
         <p>
-            Everything you need to know about your campus.
+            Navigate your campus and find the information
+            you need without the hassle.
+        </p>
+    </div>
+
+    <div class="feature-grid">
+
+        <a class="feature-card" href="departments.html">
+            <div class="feature-icon icon-blue">🎓</div>
+            <h3>Academic Departments</h3>
+            <p>
+                Discover engineering, technology and other
+                academic departments.
+            </p>
+            <span class="card-link">Explore departments →</span>
+        </a>
+
+        <a class="feature-card" href="facilities.html">
+            <div class="feature-icon icon-purple">🏢</div>
+            <h3>Campus Facilities</h3>
+            <p>
+                Find the library, hostels, laboratories,
+                canteen and more.
+            </p>
+            <span class="card-link">Explore facilities →</span>
+        </a>
+
+        <a class="feature-card" href="campus-map.html">
+            <div class="feature-icon icon-green">🗺️</div>
+            <h3>Campus Map</h3>
+            <p>
+                Find important campus locations and
+                access available map resources.
+            </p>
+            <span class="card-link">Find locations →</span>
+        </a>
+
+        <a class="feature-card" href="#ai-assistant">
+            <div class="feature-icon icon-orange">🤖</div>
+            <h3>AI Campus Assistant</h3>
+            <p>
+                Ask questions about departments, facilities
+                and campus navigation.
+            </p>
+            <span class="card-link">Ask a question →</span>
+        </a>
+
+    </div>
+</section>
+
+<!-- CAMPUS DISCOVERY BANNER -->
+<section class="discovery-section">
+    <div class="discovery-content">
+        <span class="eyebrow">CAMPUS DISCOVERY MADE SIMPLE</span>
+        <h2>Spend less time searching.<br>Explore more.</h2>
+        <p>
+            From academic blocks to student facilities,
+            KnowMyCampus helps you discover campus information
+            through a simple, accessible interface.
         </p>
 
+        <a href="campus-map.html" class="btn btn-white">
+            Discover Campus Locations →
+        </a>
     </div>
 
-
-
-    <div class="cards">
-
-
-        <!-- DEPARTMENTS -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                🏫
-            </div>
-
-
-            <h3>
-                Departments
-            </h3>
-
-
-            <p>
-                Explore all academic departments
-                available at Bannari Amman Institute
-                of Technology.
-            </p>
-
-
-            <a href="departments.html">
-
-                <button>
-                    Explore Departments →
-                </button>
-
-            </a>
-
+    <div class="discovery-art" aria-hidden="true">
+        <div class="art-circle">
+            <span>📍</span>
         </div>
-
-
-
-        <!-- FACILITIES -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                🏢
-            </div>
-
-
-            <h3>
-                Facilities
-            </h3>
-
-
-            <p>
-                Find libraries, laboratories,
-                hostels, canteen, sports and
-                other campus facilities.
-            </p>
-
-
-            <a href="facilities.html">
-
-                <button>
-                    Explore Facilities →
-                </button>
-
-            </a>
-
-        </div>
-
-
-
-        <!-- CAMPUS MAP -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                🗺️
-            </div>
-
-
-            <h3>
-                Campus Map
-            </h3>
-
-
-            <p>
-                Find important buildings,
-                departments and facilities
-                inside the campus.
-            </p>
-
-
-            <a href="campus-map.html">
-
-                <button>
-                    Open Campus Map →
-                </button>
-
-            </a>
-
-        </div>
-
-
-
-        <!-- AI ASSISTANT -->
-
-        <div class="card">
-
-            <div class="card-icon">
-                🤖
-            </div>
-
-
-            <h3>
-                AI Assistant
-            </h3>
-
-
-            <p>
-                Ask questions about departments,
-                facilities and campus locations.
-            </p>
-
-
-            <a href="#assistant">
-
-                <button>
-                    Ask AI Assistant →
-                </button>
-
-            </a>
-
-        </div>
-
-
+        <div class="art-building">🏫</div>
+        <div class="art-sparkle">✦</div>
     </div>
-
 </section>
 
-
-
-<!-- =====================================================
-     POPULAR INFORMATION
-===================================================== -->
-
-<section class="popular">
-
-
-    <div class="section-title">
-
-        <span>QUICK ACCESS</span>
-
-        <h2>Popular Campus Information</h2>
-
-    </div>
-
-
-
-    <div class="popular-grid">
-
-
-        <div class="popular-item">
-
-            <span>📚</span>
-
-            <div>
-
-                <h3>Central Library</h3>
-
-                <p>
-                    Books, journals and digital resources
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="popular-item">
-
-            <span>🧪</span>
-
-            <div>
-
-                <h3>Laboratories</h3>
-
-                <p>
-                    Department and research laboratories
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="popular-item">
-
-            <span>🏠</span>
-
-            <div>
-
-                <h3>Hostels</h3>
-
-                <p>
-                    Student accommodation facilities
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="popular-item">
-
-            <span>🍴</span>
-
-            <div>
-
-                <h3>Canteen</h3>
-
-                <p>
-                    Food and refreshments
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="popular-item">
-
-            <span>🚌</span>
-
-            <div>
-
-                <h3>Transport</h3>
-
-                <p>
-                    Campus transportation information
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="popular-item">
-
-            <span>🏥</span>
-
-            <div>
-
-                <h3>Medical Centre</h3>
-
-                <p>
-                    Campus healthcare facilities
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     AI ASSISTANT
-===================================================== -->
-
-<section class="assistant"
-         id="assistant">
-
-
-    <div class="assistant-content">
-
-
-        <span>SMART CAMPUS</span>
-
-
-        <h2>
-            🤖 KnowMyCampus AI Assistant
-        </h2>
-
-
+<!-- AI ASSISTANT -->
+<section class="section assistant-section" id="ai-assistant">
+    <div class="section-heading">
+        <span class="eyebrow">SMART CAMPUS SUPPORT</span>
+        <h2>Meet Your <span>Campus Assistant</span></h2>
         <p>
-
-            Ask questions about departments,
-            facilities, laboratories, library,
-            hostel and campus locations.
-
+            Have a campus-related question? Select a suggestion
+            or type your question below.
         </p>
-
-
     </div>
 
-
-
-    <div class="chat-box">
-
-
-        <div id="chatMessages"
-             class="chat-messages">
-
-
-            <div class="bot-message">
-
-                Hello! 👋
-
-                <br><br>
-
-                I am KnowMyCampus Assistant.
-
-                <br><br>
-
-                Ask me about departments,
-                library, hostel, laboratories
-                or campus facilities.
-
+    <div class="assistant-panel">
+        <div class="assistant-header">
+            <div class="assistant-avatar">🤖</div>
+            <div>
+                <h3>KnowMyCampus Assistant</h3>
+                <p><span class="status-dot"></span> Campus information demo</p>
             </div>
-
-
         </div>
 
-
-
-        <div class="chat-input">
-
-
-            <input
-                type="text"
-                id="chatInput"
-                placeholder="Ask something about the campus..."
-            >
-
-
-            <button onclick="askAssistant()">
-
-                Send
-
+        <div class="suggestion-list">
+            <button type="button" class="suggestion"
+                    data-question="Where can I find departments?">
+                🎓 Departments
             </button>
 
+            <button type="button" class="suggestion"
+                    data-question="What campus facilities are available?">
+                🏢 Facilities
+            </button>
 
+            <button type="button" class="suggestion"
+                    data-question="How can I find campus locations?">
+                📍 Campus locations
+            </button>
+
+            <button type="button" class="suggestion"
+                    data-question="How do I contact the college?">
+                ℹ️ College information
+            </button>
         </div>
 
+        <div class="chat-messages" id="chatMessages"
+             aria-live="polite">
+            <div class="chat-bubble bot-message">
+                Hello! 👋 I'm the KnowMyCampus demo assistant.
+                Ask me about departments, facilities or campus
+                navigation.
+            </div>
+        </div>
 
-    </div>
+        <form class="assistant-form" id="assistantForm">
+            <input type="text" id="assistantInput"
+                   placeholder="Ask something about the campus..."
+                   aria-label="Ask the campus assistant"
+                   required>
 
+            <button type="submit" class="btn btn-primary">
+                Send ↑
+            </button>
+        </form>
 
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT PROJECT
-===================================================== -->
-
-<section class="about">
-
-
-    <div>
-
-        <span>MINI PROJECT</span>
-
-
-        <h2>
-            About KnowMyCampus
-        </h2>
-
-
-        <p>
-
-            KnowMyCampus is an interactive campus
-            discovery platform designed to help
-            students and visitors easily find
-            information about departments,
-            facilities and important campus locations.
-
+        <p class="assistant-disclaimer">
+            Demo assistant: answers are based on predefined
+            keywords and are not generated by a live AI model.
         </p>
-
     </div>
-
-
-    <div class="technology-box">
-
-        <h3>
-            Technology Stack
-        </h3>
-
-
-        <div class="technology">
-
-            <span>HTML</span>
-
-            <span>CSS</span>
-
-            <span>JavaScript</span>
-
-            <span>Python</span>
-
-            <span>Flask</span>
-
-            <span>Database</span>
-
-            <span>AI</span>
-
-        </div>
-
-    </div>
-
-
 </section>
 
+<!-- CALL TO ACTION -->
+<section class="closing-section">
+    <h2>Your Campus Journey Starts Here.</h2>
+    <p>Everything you need to explore KnowMyCampus is just a click away.</p>
 
+    <div class="closing-actions">
+        <a href="departments.html" class="btn btn-primary">
+            Explore Now →
+        </a>
+        <a href="about.html" class="btn btn-outline">
+            About the Project
+        </a>
+    </div>
+</section>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+</main>
 
-<footer>
-    <img src="bait-logo.png" alt="BIT Logo">
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <strong>KnowMyCampus</strong>
+            <p>Interactive Campus Discovery Platform</p>
+            <small>
+                A Semester 5 mini project at Bannari Amman
+                Institute of Technology.
+            </small>
+        </div>
 
-    <h3>KnowMyCampus</h3>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="departments.html">Departments</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="campus-map.html">Campus Map</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
 
-    <p>Interactive Campus Discovery Platform</p>
-
-    <p>© 2026 KnowMyCampus | Semester 5 Mini Project</p>
+    <div class="footer-bottom">
+        <p>© 2026 KnowMyCampus | Mini Project</p>
+    </div>
 </footer>
-
-
-
-<!-- JAVASCRIPT -->
 
 <script src="script.js"></script>
 
+<script>
+/* MOBILE NAVIGATION */
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = mainNav.classList.toggle("nav-open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+/* CAMPUS SEARCH */
+document.getElementById("campusSearchForm")
+    .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const query = document.getElementById("searchBox")
+            .value.trim().toLowerCase();
+
+        if (!query) {
+            document.getElementById("searchBox").focus();
+            return;
+        }
+
+        const routes = [
+            { words: ["department", "departments", "ece", "cse", "eee",
+                      "eie", "mechanical", "mechatronics", "biotechnology",
+                      "agriculture", "textile", "fashion", "food technology",
+                      "computer science", "information technology", "ai and ds"],
+              url: "departments.html" },
+
+            { words: ["facility", "facilities", "library", "hostel",
+                      "canteen", "medical", "sports", "transport",
+                      "laboratory", "laboratories", "wifi", "internet",
+                      "auditorium", "atm"],
+              url: "facilities.html" },
+
+            { words: ["map", "location", "locations", "where", "campus map"],
+              url: "campus-map.html" },
+
+            { words: ["about", "project", "knowmycampus"],
+              url: "about.html" },
+
+            { words: ["assistant", "ai", "ask", "help"],
+              url: "#ai-assistant" }
+        ];
+
+        for (const route of routes) {
+            if (route.words.some(word => query.includes(word))) {
+                window.location.href = route.url;
+                return;
+            }
+        }
+
+        alert("No exact match found. Try searching for ECE, departments, library, hostel or campus map.");
+    });
+
+/* DEMO CAMPUS ASSISTANT */
+const assistantForm = document.getElementById("assistantForm");
+const assistantInput = document.getElementById("assistantInput");
+const chatMessages = document.getElementById("chatMessages");
+
+function addChatMessage(text, sender) {
+    const message = document.createElement("div");
+    message.className = "chat-bubble " +
+        (sender === "user" ? "user-message" : "bot-message");
+    message.textContent = text;
+    chatMessages.appendChild(message);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function getCampusReply(question) {
+    const q = question.toLowerCase();
+
+    if (q.includes("department") || q.includes("ece") ||
+        q.includes("cse") || q.includes("engineering")) {
+        return "You can browse the available academic departments on our Departments page. Open Departments from the navigation menu.";
+    }
+
+    if (q.includes("facility") || q.includes("library") ||
+        q.includes("hostel") || q.includes("canteen") ||
+        q.includes("sports") || q.includes("medical")) {
+        return "Visit the Facilities page to explore campus services such as the library, hostels, canteen, medical centre and sports facilities.";
+    }
+
+    if (q.includes("map") || q.includes("location") ||
+        q.includes("where") || q.includes("find")) {
+        return "Open the Campus Map page to explore the campus locations and available map resources. Location navigation depends on the map integration.";
+    }
+
+    if (q.includes("contact") || q.includes("college") ||
+        q.includes("about") || q.includes("project")) {
+        return "Visit the About page to learn about the KnowMyCampus project. For official college contact details, refer to the institution's official website.";
+    }
+
+    if (q.includes("hello") || q.includes("hi") ||
+        q.includes("hey")) {
+        return "Hello! I can help you find information about departments, facilities and campus locations. What would you like to explore?";
+    }
+
+    return "I don't have a predefined answer for that question yet. Try asking about departments, facilities, the library, hostels or campus locations.";
+}
+
+function askAssistant(question) {
+    const cleanQuestion = question.trim();
+    if (!cleanQuestion) return;
+
+    addChatMessage(cleanQuestion, "user");
+    addChatMessage(getCampusReply(cleanQuestion), "bot");
+}
+
+assistantForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    askAssistant(assistantInput.value);
+    assistantInput.value = "";
+    assistantInput.focus();
+});
+
+document.querySelectorAll(".suggestion").forEach(function (button) {
+    button.addEventListener("click", function () {
+        askAssistant(button.dataset.question);
+    });
+});
+</script>
 
 </body>
-
 </html>
